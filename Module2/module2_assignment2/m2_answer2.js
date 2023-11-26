@@ -9,7 +9,7 @@ for (let i= 0; i < numberOfParticipants; i++) {
 allNames.sort();
 document.write("<h2>List of participants</h2>");
 document.write("<ol>");
-for (let i=0; i < numberOfParticipants; i++) {
+for (let i=0; i < allNames.length; i++) {
   document.write('<li>' + allNames[i] + '</li>');
 }
 document.write("</ol>");
