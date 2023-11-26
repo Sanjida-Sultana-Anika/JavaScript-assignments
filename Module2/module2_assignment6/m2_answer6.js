@@ -9,6 +9,7 @@ while (result !== 6) {
   rolls.push(result);
   result = diceRoll();
 }
+rolls.push(result);
 
 document.write("<h2>Total dice rolls:</h2>");
 document.write("<ul>");
