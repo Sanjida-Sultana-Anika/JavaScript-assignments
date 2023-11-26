@@ -14,4 +14,4 @@ if(randomNumber === 1){
   house = "Error";
 }
 
-document.write("<h2>" + studentName + " you are in " + house + "!</h2>")
+document.write("<h2>" + studentName + " you are in " + house + "!</h2>");
