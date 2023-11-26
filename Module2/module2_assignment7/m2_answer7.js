@@ -12,6 +12,8 @@ while (result !== sides) {
   result = diceRoll(sides);
 }
 
+rolls.push(result);
+
 document.write("<h2>Total dice rolls:</h2>");
 document.write("<ul>");
 for (let i=0; i <rolls.length; i++) {
