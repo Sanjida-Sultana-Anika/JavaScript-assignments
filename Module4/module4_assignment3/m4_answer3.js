@@ -3,7 +3,8 @@ document.getElementById('search').addEventListener('submit', function(event){
   const queryValue = document.getElementById('query').value;
 
   const url = `https://api.tvmaze.com/search/shows?q=${encodeURIComponent(queryValue)}`;
-  fetch(url).then(r => r.json())
+  fetch(url)
+  .then(r => r.json())
   .then(data => {
         displayResults(data);
   })
@@ -24,22 +25,18 @@ function displayResults(data){
 
   name.textContent = tvSeries.show.name;
 
-  const medImg = tvSeries.show.image?.medium;
-  image.src = medImg ? medImg : 'placeholder.jpg';
+  image.src = tvSeries.show.image?.medium || 'placeholder.jpg';
   image.alt = tvSeries.show.name;
 
   link.href = tvSeries.show.url;
   link.target = '_blank';
   link.textContent = 'Details';
 
-  const summaryInfo = document.createTextNode(tvSeries.show.summary);
-  summaryContainer.appendChild(summaryInfo);
-
+  summaryContainer.insertAdjacentHTML("afterBegin", tvSeries.show.summary);
   article.appendChild(name);
   article.appendChild(link);
   article.appendChild(image);
   article.appendChild(summaryContainer);
-
   results.appendChild(article);
 });
 }

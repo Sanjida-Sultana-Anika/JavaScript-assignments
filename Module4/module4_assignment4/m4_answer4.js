@@ -32,8 +32,7 @@ function displayResults(data){
   link.target = '_blank';
   link.textContent = 'Details';
 
-  const summaryInfo = document.createTextNode(tvSeries.show.summary);
-  summaryContainer.appendChild(summaryInfo);
+  summaryContainer.insertAdjacentHTML("afterBegin", tvSeries.show.summary);
   article.appendChild(name);
   article.appendChild(link);
   article.appendChild(image);
